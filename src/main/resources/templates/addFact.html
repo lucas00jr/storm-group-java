@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Adicionar Fact</title>
+</head>
+<body>
+<h2>Adicionar Fact</h2>
+<form action="#" th:action="@{/facts/addFact}" th:object="${fact}" method="post">
+    <label>Entidade:</label>
+    <input type="text" th:field="*{entity}" /><br/>
+
+    <label>Atributo:</label>
+    <input type="text" th:field="*{attribute}" /><br/>
+
+    <label>Valor:</label>
+    <input type="text" th:field="*{value}" /><br/>
+
+    <label>Adicionado:</label>
+    <input type="checkbox" th:field="*{added}" /><br/>
+
+    <button type="submit">Adicionar</button>
+</form>
+<a href="/">Voltar para lista de Facts</a>
+</body>
+</html>

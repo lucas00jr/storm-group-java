@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Adicionar Schema</title>
+</head>
+<body>
+<h2>Adicionar Schema</h2>
+<form action="#" th:action="@{/facts/addSchema}" th:object="${schema}" method="post">
+    <label>Atributo:</label>
+    <input type="text" th:field="*{attribute}" /><br/>
+
+    <label>Cardinalidade:</label>
+    <input type="text" th:field="*{cardinality}" /><br/>
+
+    <button type="submit">Adicionar</button>
+</form>
+<a href="/">Voltar para lista de Schemas</a>
+</body>
+</html>

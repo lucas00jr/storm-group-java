@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Facts Application</title>
+    <link rel="stylesheet" type="text/css" href="/static/styles.css">
+</head>
+<body>
+<h1>Facts Application</h1>
+
+<h2>Todos os Facts</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Entidade</th>
+        <th>Atributo</th>
+        <th>Valor</th>
+        <th>Adicionado</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="fact : ${facts}">
+        <td th:text="${fact.entity}">Entidade</td>
+        <td th:text="${fact.attribute}">Atributo</td>
+        <td th:text="${fact.value}">Valor</td>
+        <td th:text="${fact.added}">Adicionado</td>
+    </tr>
+    </tbody>
+</table>
+
+<h2>Todos os Schemas</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Atributo</th>
+        <th>Cardinalidade</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="schema : ${schemas}">
+        <td th:text="${schema.attribute}">Atributo</td>
+        <td th:text="${schema.cardinality}">Cardinalidade</td>
+    </tr>
+    </tbody>
+</table>
+
+<h2>Facts Vigentes</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Entidade</th>
+        <th>Atributo</th>
+        <th>Valor</th>
+        <th>Adicionado</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="currentFact : ${currentFacts}">
+        <td th:text="${currentFact.entity}">Entidade</td>
+        <td th:text="${currentFact.attribute}">Atributo</td>
+        <td th:text="${currentFact.value}">Valor</td>
+        <td th:text="${currentFact.added}">Adicionado</td>
+    </tr>
+    </tbody>
+</table>
+
+<h2>Adicionar Novo</h2>
+<a href="/addFact">Adicionar Novo Fact</a>
+<br>
+<a href="/addSchema">Adicionar Novo Schema</a>
+
+</body>
+</html>
